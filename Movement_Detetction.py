@@ -37,12 +37,12 @@ while True:
     cv2.putText(img, text, (10, 20), cv2.FONT_HERSHEY_COMPLEX, 0.5, (0, 0, 255), 2)
 
     cv2.imshow("cameraFeed", img)
-    # fourcc = cv2.VideoWriter_fourcc(*'MP4V')
-    # result = cv2.VideoWriter('output.mp4', fourcc, 20.0, (640, 480))
+    fourcc = cv2.VideoWriter_fourcc(*'MP4V')
+    result = cv2.VideoWriter('output.mp4', fourcc, 20.0, (640, 480))
     key = cv2.waitKey(1) & 0xFF
     if key == ord("q"):
         break
-# result.release()
+result.release()
 cam.release()
 cv2.destroyAllWindows()
 
